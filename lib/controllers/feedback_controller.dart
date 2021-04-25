@@ -1,5 +1,6 @@
 import 'package:gev_app/models/feedback.dart';
 import 'package:gev_app/models/feedback_list_model.dart';
+import 'package:gev_app/utilities/commons.dart';
 import 'package:gev_app/utilities/constants.dart';
 import 'package:gev_app/utilities/db_manager.dart';
 import 'package:gev_app/utilities/webservice_manager.dart';
@@ -74,9 +75,12 @@ class FeedbackController {
   }
 
   //Send Feedback Data to Server by calling API
-  sendDataToServer(FeedbackModel feedbackModel)
+  sendDataToServer(FeedbackModel feedbackModel) async
   {
+    feedbackModel.userId = 20; feedbackModel.mobileUserDetailsId = 52; feedbackModel.visitDate=Common.convertDateTimeToString(DateTime.now());
+    print("sendDataToServer: ${feedbackModel.toString()}");
     WebserviceManager webserviceManager = WebserviceManager();
-    webserviceManager.makePostRequest(Constant.SUB_URL_add_user_feedback, feedbackModel.toString());
+    Map<dynamic, dynamic> response = await webserviceManager.makePostRequestMap(Constant.SUB_URL_add_user_feedback, feedbackModel.toJson());
+    print("Response: " + response.toString());
   }
 }

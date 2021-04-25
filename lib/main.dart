@@ -48,7 +48,8 @@ class _MyAppState extends State<MyApp> {
       // home: Gmap(),
       routes: {
         // '/map': (context) => GmapWalkIn(),
-        '/': (context) => FirstSplashScreen(),
+        //'/': (context) => FirstSplashScreen(),
+        '/': (context) => FeedbackScreen(),
         '/profile': (context) => ProfileScreen(),
         '/schedule': (context) => ScheduleScreen(),
         '/supportACause': (context) => SupportACause(),

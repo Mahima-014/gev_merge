@@ -24,7 +24,7 @@ class WalkInController {
   saveDataInDB(MobileUserDetails mobileUserDetails) async {
     dbManager = DbManager();
 
-    int id = await dbManager.getLastID(Constant.mobileUserDetails);
+    int id = await dbManager.getLastID(Constant.mobile_user_details);
 
     mobileUserDetails = checkTimeSlot(mobileUserDetails);
     // dbManager.createTableIfNotExists(Constant.mobile_user_details,
@@ -33,12 +33,12 @@ class WalkInController {
     if (id == 1) {
       print('Inside saveDataInDB lastId==1');
       dbManager.update(
-          Constant.mobileUserDetails, mobileUserDetails.toJson(), 'id = 1');
-      dbManager.getLastID(Constant.mobileUserDetails);
+          Constant.mobile_user_details, mobileUserDetails.toJson(), 'id = 1');
+      dbManager.getLastID(Constant.mobile_user_details);
     } else {
       print('Inside saveDataInDB lastId!=1');
-      dbManager.insert(Constant.mobileUserDetails, mobileUserDetails.toJson());
-      dbManager.getLastID(Constant.mobileUserDetails);
+      dbManager.insert(Constant.mobile_user_details, mobileUserDetails.toJson());
+      dbManager.getLastID(Constant.mobile_user_details);
     }
 
     List<Map> list = await dbManager

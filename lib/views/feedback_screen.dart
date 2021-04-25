@@ -20,7 +20,12 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
   List<FeedbackListModel> viewDetailsList;
 
   //TextEditingControllers
-  //overall_experience_con
+  TextEditingController overall_experience_comment_con = TextEditingController();
+  TextEditingController reservation_experience_comment_con = TextEditingController();
+  TextEditingController staff_experience_comment_con = TextEditingController();
+  TextEditingController events_organization_comment_con = TextEditingController();
+  TextEditingController value_for_money_comment_con = TextEditingController();
+  TextEditingController general_comments_con = TextEditingController();
 
   //Model Object
   FeedbackModel feedbackModel = FeedbackModel();
@@ -131,6 +136,13 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                               TextFormField(
                                 decoration: Common.buildInputDecorationComment(
                                     'Your Comment (Optional)'),
+
+                                controller: index == 0 ? overall_experience_comment_con :
+                                index == 1 ? reservation_experience_comment_con :
+                                index == 2 ? staff_experience_comment_con :
+                                index == 3 ? events_organization_comment_con :
+                                value_for_money_comment_con,
+
                                 maxLines: null,
                               )
                             ],
@@ -158,7 +170,8 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                   children: [
                     TextFormField(
                       decoration: Common.buildInputDecorationComment(
-                          'Your Comment (Optional)'),
+                          'General Comments (Optional)'),
+                      controller: general_comments_con,
                       maxLines: null,
                     )
                   ],
@@ -180,8 +193,17 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                           height: 42,
                           child: RaisedButton(
                             onPressed: () {
+                              feedbackModel.overallComments = overall_experience_comment_con.text;
+                              feedbackModel.reservationComments = reservation_experience_comment_con.text;
+                              feedbackModel.staffComments = staff_experience_comment_con.text;
+                              feedbackModel.eventsComments = events_organization_comment_con.text;
+                              feedbackModel.valueComments = value_for_money_comment_con.text;
+                              feedbackModel.generalComments = general_comments_con.text;
+                              print("FEEDBACK SCREEN: ${feedbackModel.toString()}");
+                              feedbackController.sendDataToServer(feedbackModel);
                               print('Done');
-                            },
+
+                              },
                             child: Text(
                               'Submit',
                               style: TextStyle(

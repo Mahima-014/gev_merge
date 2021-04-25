@@ -6,11 +6,18 @@ class FeedbackModel{
   String createdDate;
   String createdBy;
   double overallExperience;
-  double reservationExperience;
-  double staffEfficiency;
-  double eventsOrganisation;
-  double valueOfExperience;
   String overallComments;
+  double reservationExperience;
+  String reservationComments;
+  double staffEfficiency;
+  String staffComments;
+  double eventsOrganisation;
+  String eventsComments;
+  double valueOfExperience;
+  String valueComments;
+  String generalComments;
+  String visitDate;
+
 
   FeedbackModel({
     this.id,
@@ -19,11 +26,17 @@ class FeedbackModel{
     this.createdDate,
     this.createdBy,
     this.overallExperience,
-    this.reservationExperience,
-    this.staffEfficiency,
-    this.eventsOrganisation,
-    this.valueOfExperience,
     this.overallComments,
+    this.reservationExperience,
+    this.reservationComments,
+    this.staffEfficiency,
+    this.staffComments,
+    this.eventsOrganisation,
+    this.eventsComments,
+    this.valueOfExperience,
+    this.valueComments,
+    this.generalComments,
+    this.visitDate,
   });
 
   FeedbackModel.fromJson(Map<String, dynamic> json)
@@ -33,11 +46,17 @@ class FeedbackModel{
         createdDate=json['create_date'],
         createdBy=json['create_by'],
         overallExperience=json['overall_experience'],
+        overallComments=json['overall_comments'],
         reservationExperience=json['reservation_experience'],
+        reservationComments=json['reservation_comments'],
         staffEfficiency=json['staff_efficiency'],
+        staffComments=json['staff_comments'],
         eventsOrganisation=json['events_organisation'],
+        eventsComments=json['events_comments'],
         valueOfExperience=json['value_of_experience'],
-        overallComments=json['overall_comments'];
+        valueComments=json['value_comments'],
+        generalComments=json['general_comments'],
+        visitDate=json['visit_date'];
 
   Map<String, dynamic> toJson() => {
     'id':id,
@@ -46,10 +65,16 @@ class FeedbackModel{
     'created_date':createdDate,
     'created_by':createdBy,
     'overall_experience':overallExperience,
-    'reservation_experience':reservationExperience,
-    'staff_efficiency':staffEfficiency,
-    'events_organisation':eventsOrganisation,
-    'value_of_experience':valueOfExperience,
     'overall_comments':overallComments,
+    'reservation_experience':reservationExperience,
+    'reservation_comments':reservationComments,
+    'staff_efficiency':staffEfficiency,
+    'staff_comments':staffComments,
+    'events_organisation':eventsOrganisation,
+    'events_comments':eventsComments,
+    'value_of_experience':valueOfExperience,
+    'value_comments':valueComments,
+    'general_comments':generalComments,
+    'visit_date':visitDate,
   };
 }

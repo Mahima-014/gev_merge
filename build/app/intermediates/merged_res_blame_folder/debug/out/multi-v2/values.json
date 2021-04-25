@@ -1,46 +1,27 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\gevmobileapp\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "outputFile": "D:\\Projects\\Flutter\\MAHIMA PROJECTS\\gev_merge\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\91950\\.gradle\\caches\\transforms-2\\files-2.1\\3c8e7eb3d21ac94d08f658f6d8a1c9f3\\jetified-play-services-basement-17.0.0\\res\\values\\values.xml",
+                    "source": "C:\\Users\\Arpit\\.gradle\\caches\\transforms-2\\files-2.1\\1ff4bcb3167a74d75651e794e1872ecc\\media-1.1.0\\res\\values\\values.xml",
                     "from": {
-                        "startLines": "4,7",
-                        "startColumns": "0,0",
-                        "startOffsets": "238,401",
-                        "endColumns": "63,166",
-                        "endOffsets": "301,567"
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,144,215,288,341,394,447,500,560,626,748,809,875",
+                        "endColumns": "88,70,72,52,52,52,52,59,65,121,60,65,66",
+                        "endOffsets": "139,210,283,336,389,442,495,555,621,743,804,870,937"
                     },
                     "to": {
-                        "startLines": "92,102",
-                        "startColumns": "4,4",
-                        "startOffsets": "5764,6942",
-                        "endColumns": "67,166",
-                        "endOffsets": "5827,7104"
+                        "startLines": "12,13,15,39,40,41,42,91,126,128,129,134,136",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "908,997,1126,2739,2792,2845,2898,5704,9090,9266,9388,9650,9845",
+                        "endColumns": "88,70,72,52,52,52,52,59,65,121,60,65,66",
+                        "endOffsets": "992,1063,1194,2787,2840,2893,2946,5759,9151,9383,9444,9711,9907"
                     }
                 },
                 {
-                    "source": "D:\\gevmobileapp\\android\\app\\src\\main\\res\\values\\styles.xml",
-                    "from": {
-                        "startLines": "3,14",
-                        "startColumns": "4,4",
-                        "startOffsets": "176,830",
-                        "endLines": "7,16",
-                        "endColumns": "12,12",
-                        "endOffsets": "472,996"
-                    },
-                    "to": {
-                        "startLines": "113,118",
-                        "startColumns": "4,4",
-                        "startOffsets": "8306,8603",
-                        "endLines": "117,120",
-                        "endColumns": "12,12",
-                        "endOffsets": "8598,8767"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\91950\\.gradle\\caches\\transforms-2\\files-2.1\\544eab86e7823cb4f6f6bbcd34094c52\\core-1.2.0\\res\\values\\values.xml",
+                    "source": "C:\\Users\\Arpit\\.gradle\\caches\\transforms-2\\files-2.1\\544eab86e7823cb4f6f6bbcd34094c52\\core-1.2.0\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,83,84,88,89,90,91,98,141,173,210",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -59,26 +40,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\91950\\.gradle\\caches\\transforms-2\\files-2.1\\c5de8972dacd649c27c247c9e16de3ac\\jetified-play-services-maps-17.0.0\\res\\values\\values.xml",
+                    "source": "C:\\Users\\Arpit\\.gradle\\caches\\transforms-2\\files-2.1\\3c8e7eb3d21ac94d08f658f6d8a1c9f3\\jetified-play-services-basement-17.0.0\\res\\values\\values.xml",
                     "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "165",
-                        "endLines": "62",
-                        "endColumns": "20",
-                        "endOffsets": "1582"
+                        "startLines": "4,7",
+                        "startColumns": "0,0",
+                        "startOffsets": "238,401",
+                        "endColumns": "63,166",
+                        "endOffsets": "301,567"
                     },
                     "to": {
-                        "startLines": "278",
-                        "startColumns": "4",
-                        "startOffsets": "17772",
-                        "endLines": "336",
-                        "endColumns": "20",
-                        "endOffsets": "19189"
+                        "startLines": "92,102",
+                        "startColumns": "4,4",
+                        "startOffsets": "5764,6942",
+                        "endColumns": "67,166",
+                        "endOffsets": "5827,7104"
                     }
                 },
                 {
-                    "source": "C:\\Users\\91950\\.gradle\\caches\\transforms-2\\files-2.1\\7c879cb157fab2c9a5d74c3d70fd64e3\\jetified-play-services-base-17.0.0\\res\\values\\values.xml",
+                    "source": "C:\\Users\\Arpit\\.gradle\\caches\\transforms-2\\files-2.1\\7c879cb157fab2c9a5d74c3d70fd64e3\\jetified-play-services-base-17.0.0\\res\\values\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,33,46",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -97,20 +76,41 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\91950\\.gradle\\caches\\transforms-2\\files-2.1\\1ff4bcb3167a74d75651e794e1872ecc\\media-1.1.0\\res\\values\\values.xml",
+                    "source": "D:\\Projects\\Flutter\\MAHIMA PROJECTS\\gev_merge\\android\\app\\src\\main\\res\\values\\styles.xml",
                     "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,144,215,288,341,394,447,500,560,626,748,809,875",
-                        "endColumns": "88,70,72,52,52,52,52,59,65,121,60,65,66",
-                        "endOffsets": "139,210,283,336,389,442,495,555,621,743,804,870,937"
+                        "startLines": "3,14",
+                        "startColumns": "4,4",
+                        "startOffsets": "176,830",
+                        "endLines": "7,16",
+                        "endColumns": "12,12",
+                        "endOffsets": "472,996"
                     },
                     "to": {
-                        "startLines": "12,13,15,39,40,41,42,91,126,128,129,134,136",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "908,997,1126,2739,2792,2845,2898,5704,9090,9266,9388,9650,9845",
-                        "endColumns": "88,70,72,52,52,52,52,59,65,121,60,65,66",
-                        "endOffsets": "992,1063,1194,2787,2840,2893,2946,5759,9151,9383,9444,9711,9907"
+                        "startLines": "113,118",
+                        "startColumns": "4,4",
+                        "startOffsets": "8306,8603",
+                        "endLines": "117,120",
+                        "endColumns": "12,12",
+                        "endOffsets": "8598,8767"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Arpit\\.gradle\\caches\\transforms-2\\files-2.1\\c5de8972dacd649c27c247c9e16de3ac\\jetified-play-services-maps-17.0.0\\res\\values\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "165",
+                        "endLines": "62",
+                        "endColumns": "20",
+                        "endOffsets": "1582"
+                    },
+                    "to": {
+                        "startLines": "278",
+                        "startColumns": "4",
+                        "startOffsets": "17772",
+                        "endLines": "336",
+                        "endColumns": "20",
+                        "endOffsets": "19189"
                     }
                 }
             ]
