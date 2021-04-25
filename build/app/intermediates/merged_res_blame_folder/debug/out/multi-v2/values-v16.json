@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "E:\\IKSSolns\\MOBILE APPLICATIONS\\GEV_mobile_Demo_merge\\gevmobileapp\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v16\\values-v16.xml",
+            "outputFile": "D:\\gevmobileapp\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v16\\values-v16.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\toshiba\\.gradle\\caches\\transforms-2\\files-2.1\\544eab86e7823cb4f6f6bbcd34094c52\\core-1.2.0\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\91950\\.gradle\\caches\\transforms-2\\files-2.1\\544eab86e7823cb4f6f6bbcd34094c52\\core-1.2.0\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

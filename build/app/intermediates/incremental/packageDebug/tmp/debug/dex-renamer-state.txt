@@ -1,4 +1,4 @@
-#Sun Apr 25 02:22:28 IST 2021
-base.0=E\:\\IKSSolns\\MOBILE APPLICATIONS\\GEV_mobile_Demo_merge\\gevmobileapp\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+#Sun Apr 25 14:30:40 IST 2021
+base.0=D\:\\gevmobileapp\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

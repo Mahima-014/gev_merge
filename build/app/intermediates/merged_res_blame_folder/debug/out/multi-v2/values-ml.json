@@ -1,27 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "E:\\IKSSolns\\MOBILE APPLICATIONS\\GEV_mobile_Demo_merge\\gevmobileapp\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ml\\values-ml.xml",
+            "outputFile": "D:\\gevmobileapp\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ml\\values-ml.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\toshiba\\.gradle\\caches\\transforms-2\\files-2.1\\3c8e7eb3d21ac94d08f658f6d8a1c9f3\\jetified-play-services-basement-17.0.0\\res\\values-ml\\values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "247",
-                        "endColumns": "218",
-                        "endOffsets": "465"
-                    },
-                    "to": {
-                        "startLines": "10",
-                        "startColumns": "4",
-                        "startOffsets": "1321",
-                        "endColumns": "218",
-                        "endOffsets": "1535"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\toshiba\\.gradle\\caches\\transforms-2\\files-2.1\\7c879cb157fab2c9a5d74c3d70fd64e3\\jetified-play-services-base-17.0.0\\res\\values-ml\\values.xml",
+                    "source": "C:\\Users\\91950\\.gradle\\caches\\transforms-2\\files-2.1\\7c879cb157fab2c9a5d74c3d70fd64e3\\jetified-play-services-base-17.0.0\\res\\values-ml\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -38,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\toshiba\\.gradle\\caches\\transforms-2\\files-2.1\\544eab86e7823cb4f6f6bbcd34094c52\\core-1.2.0\\res\\values-ml\\values-ml.xml",
+                    "source": "C:\\Users\\91950\\.gradle\\caches\\transforms-2\\files-2.1\\544eab86e7823cb4f6f6bbcd34094c52\\core-1.2.0\\res\\values-ml\\values-ml.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -52,6 +35,23 @@
                         "startOffsets": "2955",
                         "endColumns": "100",
                         "endOffsets": "3051"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\91950\\.gradle\\caches\\transforms-2\\files-2.1\\3c8e7eb3d21ac94d08f658f6d8a1c9f3\\jetified-play-services-basement-17.0.0\\res\\values-ml\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "247",
+                        "endColumns": "218",
+                        "endOffsets": "465"
+                    },
+                    "to": {
+                        "startLines": "10",
+                        "startColumns": "4",
+                        "startOffsets": "1321",
+                        "endColumns": "218",
+                        "endOffsets": "1535"
                     }
                 }
             ]

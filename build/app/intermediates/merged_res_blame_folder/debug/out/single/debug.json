@@ -1,58 +1,58 @@
 [
     {
-        "merged": "E:\\IKSSolns\\MOBILE APPLICATIONS\\GEV_mobile_Demo_merge\\gevmobileapp\\build\\app\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "E:\\IKSSolns\\MOBILE APPLICATIONS\\GEV_mobile_Demo_merge\\gevmobileapp\\android\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+        "merged": "D:\\gevmobileapp\\build\\app\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "D:\\gevmobileapp\\android\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
     },
     {
-        "merged": "E:\\IKSSolns\\MOBILE APPLICATIONS\\GEV_mobile_Demo_merge\\gevmobileapp\\build\\app\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_app_notification_icon.png.flat",
-        "source": "E:\\IKSSolns\\MOBILE APPLICATIONS\\GEV_mobile_Demo_merge\\gevmobileapp\\build\\app\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\app_notification_icon.png"
+        "merged": "D:\\gevmobileapp\\build\\app\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_app_notification_icon.xml.flat",
+        "source": "D:\\gevmobileapp\\build\\app\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\app_notification_icon.xml"
     },
     {
-        "merged": "E:\\IKSSolns\\MOBILE APPLICATIONS\\GEV_mobile_Demo_merge\\gevmobileapp\\build\\app\\intermediates\\res\\merged\\debug\\drawable-hdpi_app_notification_icon.png.flat",
-        "source": "E:\\IKSSolns\\MOBILE APPLICATIONS\\GEV_mobile_Demo_merge\\gevmobileapp\\android\\app\\src\\main\\res\\drawable-hdpi\\app_notification_icon.png"
+        "merged": "D:\\gevmobileapp\\build\\app\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "D:\\gevmobileapp\\android\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
     },
     {
-        "merged": "E:\\IKSSolns\\MOBILE APPLICATIONS\\GEV_mobile_Demo_merge\\gevmobileapp\\build\\app\\intermediates\\res\\merged\\debug\\drawable-ldpi_app_notification_icon.png.flat",
-        "source": "E:\\IKSSolns\\MOBILE APPLICATIONS\\GEV_mobile_Demo_merge\\gevmobileapp\\build\\app\\generated\\res\\pngs\\debug\\drawable-ldpi\\app_notification_icon.png"
+        "merged": "D:\\gevmobileapp\\build\\app\\intermediates\\res\\merged\\debug\\drawable-xhdpi_app_notification_icon.png.flat",
+        "source": "D:\\gevmobileapp\\android\\app\\src\\main\\res\\drawable-xhdpi\\app_notification_icon.png"
     },
     {
-        "merged": "E:\\IKSSolns\\MOBILE APPLICATIONS\\GEV_mobile_Demo_merge\\gevmobileapp\\build\\app\\intermediates\\res\\merged\\debug\\drawable-mdpi_app_notification_icon.png.flat",
-        "source": "E:\\IKSSolns\\MOBILE APPLICATIONS\\GEV_mobile_Demo_merge\\gevmobileapp\\android\\app\\src\\main\\res\\drawable-mdpi\\app_notification_icon.png"
+        "merged": "D:\\gevmobileapp\\build\\app\\intermediates\\res\\merged\\debug\\drawable-mdpi_app_notification_icon.png.flat",
+        "source": "D:\\gevmobileapp\\android\\app\\src\\main\\res\\drawable-mdpi\\app_notification_icon.png"
     },
     {
-        "merged": "E:\\IKSSolns\\MOBILE APPLICATIONS\\GEV_mobile_Demo_merge\\gevmobileapp\\build\\app\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
-        "source": "E:\\IKSSolns\\MOBILE APPLICATIONS\\GEV_mobile_Demo_merge\\gevmobileapp\\android\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+        "merged": "D:\\gevmobileapp\\build\\app\\intermediates\\res\\merged\\debug\\drawable-ldpi_app_notification_icon.png.flat",
+        "source": "D:\\gevmobileapp\\build\\app\\generated\\res\\pngs\\debug\\drawable-ldpi\\app_notification_icon.png"
     },
     {
-        "merged": "E:\\IKSSolns\\MOBILE APPLICATIONS\\GEV_mobile_Demo_merge\\gevmobileapp\\build\\app\\intermediates\\res\\merged\\debug\\drawable_launch_background.xml.flat",
-        "source": "E:\\IKSSolns\\MOBILE APPLICATIONS\\GEV_mobile_Demo_merge\\gevmobileapp\\android\\app\\src\\main\\res\\drawable\\launch_background.xml"
+        "merged": "D:\\gevmobileapp\\build\\app\\intermediates\\res\\merged\\debug\\drawable-v21_launch_background.xml.flat",
+        "source": "D:\\gevmobileapp\\android\\app\\src\\main\\res\\drawable-v21\\launch_background.xml"
     },
     {
-        "merged": "E:\\IKSSolns\\MOBILE APPLICATIONS\\GEV_mobile_Demo_merge\\gevmobileapp\\build\\app\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_app_notification_icon.png.flat",
-        "source": "E:\\IKSSolns\\MOBILE APPLICATIONS\\GEV_mobile_Demo_merge\\gevmobileapp\\android\\app\\src\\main\\res\\drawable-xxhdpi\\app_notification_icon.png"
+        "merged": "D:\\gevmobileapp\\build\\app\\intermediates\\res\\merged\\debug\\drawable-hdpi_app_notification_icon.png.flat",
+        "source": "D:\\gevmobileapp\\android\\app\\src\\main\\res\\drawable-hdpi\\app_notification_icon.png"
     },
     {
-        "merged": "E:\\IKSSolns\\MOBILE APPLICATIONS\\GEV_mobile_Demo_merge\\gevmobileapp\\build\\app\\intermediates\\res\\merged\\debug\\drawable-v21_launch_background.xml.flat",
-        "source": "E:\\IKSSolns\\MOBILE APPLICATIONS\\GEV_mobile_Demo_merge\\gevmobileapp\\android\\app\\src\\main\\res\\drawable-v21\\launch_background.xml"
+        "merged": "D:\\gevmobileapp\\build\\app\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "D:\\gevmobileapp\\android\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
     },
     {
-        "merged": "E:\\IKSSolns\\MOBILE APPLICATIONS\\GEV_mobile_Demo_merge\\gevmobileapp\\build\\app\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_app_notification_icon.xml.flat",
-        "source": "E:\\IKSSolns\\MOBILE APPLICATIONS\\GEV_mobile_Demo_merge\\gevmobileapp\\build\\app\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\app_notification_icon.xml"
+        "merged": "D:\\gevmobileapp\\build\\app\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "D:\\gevmobileapp\\android\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
     },
     {
-        "merged": "E:\\IKSSolns\\MOBILE APPLICATIONS\\GEV_mobile_Demo_merge\\gevmobileapp\\build\\app\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
-        "source": "E:\\IKSSolns\\MOBILE APPLICATIONS\\GEV_mobile_Demo_merge\\gevmobileapp\\android\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+        "merged": "D:\\gevmobileapp\\build\\app\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "D:\\gevmobileapp\\android\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
     },
     {
-        "merged": "E:\\IKSSolns\\MOBILE APPLICATIONS\\GEV_mobile_Demo_merge\\gevmobileapp\\build\\app\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "E:\\IKSSolns\\MOBILE APPLICATIONS\\GEV_mobile_Demo_merge\\gevmobileapp\\android\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+        "merged": "D:\\gevmobileapp\\build\\app\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_app_notification_icon.png.flat",
+        "source": "D:\\gevmobileapp\\android\\app\\src\\main\\res\\drawable-xxhdpi\\app_notification_icon.png"
     },
     {
-        "merged": "E:\\IKSSolns\\MOBILE APPLICATIONS\\GEV_mobile_Demo_merge\\gevmobileapp\\build\\app\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "E:\\IKSSolns\\MOBILE APPLICATIONS\\GEV_mobile_Demo_merge\\gevmobileapp\\android\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+        "merged": "D:\\gevmobileapp\\build\\app\\intermediates\\res\\merged\\debug\\drawable_launch_background.xml.flat",
+        "source": "D:\\gevmobileapp\\android\\app\\src\\main\\res\\drawable\\launch_background.xml"
     },
     {
-        "merged": "E:\\IKSSolns\\MOBILE APPLICATIONS\\GEV_mobile_Demo_merge\\gevmobileapp\\build\\app\\intermediates\\res\\merged\\debug\\drawable-xhdpi_app_notification_icon.png.flat",
-        "source": "E:\\IKSSolns\\MOBILE APPLICATIONS\\GEV_mobile_Demo_merge\\gevmobileapp\\android\\app\\src\\main\\res\\drawable-xhdpi\\app_notification_icon.png"
+        "merged": "D:\\gevmobileapp\\build\\app\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_app_notification_icon.png.flat",
+        "source": "D:\\gevmobileapp\\build\\app\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\app_notification_icon.png"
     }
 ]

@@ -2,7 +2,8 @@ import 'package:gev_app/utilities/constants.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 
-class DbManager {
+class DbManager{
+
   var databasesPath;
   String path;
   static Database database;
@@ -10,14 +11,16 @@ class DbManager {
   static List<Map> list;
   static const dbName = 'gev.db';
 
+
   // To initialization the db.
   static connectToDB() async {
     var databasePath = await getDatabasesPath();
     String path = join(databasePath, dbName);
-    database = await openDatabase(path, version: 1,
-        onCreate: (Database db, int version) async {
+    database = await openDatabase(path, version: 1, onCreate: (Database db, int version) async {
       //
-      await db.execute(Constant.queryToCreateMobileUserDetailsTable);
+      await db.execute(
+          Constant.queryToCreateMobileUserDetailsTable
+      );
     });
     print('Iitialized DB');
   }
@@ -25,10 +28,9 @@ class DbManager {
   // Determine whether the table exists.
   isTableExits(String tableName) async {
     //Built-in table sqlite_master
-    var sql =
-        "SELECT * FROM sqlite_master WHERE TYPE = 'table' AND NAME = '$tableName'";
+    var sql ="SELECT * FROM sqlite_master WHERE TYPE = 'table' AND NAME = '$tableName'";
     var res = await database.rawQuery(sql);
-    var returnRes = res != null && res.length > 0;
+    var returnRes = res!=null && res.length > 0;
     return returnRes;
   }
 
@@ -42,6 +44,7 @@ class DbManager {
     }
     await database.execute(sql);
   }
+
 
   // To insert the data in db.
   insert(String tableName, Map map) async {
@@ -64,13 +67,17 @@ class DbManager {
     }
   }
 
+
   // To get records from the table.
-  Future<List<Map>> getRecords(String query) async {
-    try {
+  Future<List<Map>> getRecords(String query) async
+  {
+    try{
       // Get the records
       list = await database.rawQuery(query);
       print("getRecords : $list");
-    } catch (e) {
+    }
+    catch(e)
+    {
       print("EXCEPTION getRecords: ${e.toString()}");
       return null;
     }
@@ -82,10 +89,12 @@ class DbManager {
   delete(String tableName, String where, List list) async {
     //var myWhere = 'name = ?';
     //var myArgs = ['cat'];
-    try {
+    try{
       await database.delete(tableName, where: where, whereArgs: list);
       print('Deleted: $tableName');
-    } catch (e) {
+    }
+    catch(e)
+    {
       print("EXCEPTION delete: ${e.toString()}");
     }
   }
@@ -96,14 +105,18 @@ class DbManager {
     await database.update(tableName, map, where: where);
   }
 
+
   //Get Last Inserted ID
   Future<int> getLastID(String tableName) async {
-    try {
-      List<Map> listOfLastInsertedID = await database
-          .rawQuery('SELECT * FROM $tableName ORDER BY id DESC LIMIT 1');
+
+    try
+    {
+      List<Map> listOfLastInsertedID = await database.rawQuery('SELECT * FROM $tableName ORDER BY id DESC LIMIT 1');
       lastID = listOfLastInsertedID.elementAt(0).values.elementAt(0);
       print('LastID : $lastID');
-    } catch (e) {
+    }
+    catch(e)
+    {
       print("EXCEPTION getLastID: ${e.toString()}");
       return -2;
     }
@@ -111,9 +124,12 @@ class DbManager {
     return lastID;
   }
 
+
+
   // To shut down the db.
-  close() async {
+  close () async{
     database?.close();
     database = null;
   }
+
 }
