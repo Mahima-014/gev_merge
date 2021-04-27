@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gev_app/controllers/check_in_controller.dart';
@@ -51,6 +53,9 @@ class _CheckInScreenState extends State<CheckInScreen> {
     super.initState();
     userPhone = preferences.getPreferences('phoneNo');
     contactNumberCon = TextEditingController(text: userPhone);
+    User user =
+        User.fromJson(jsonDecode(preferences.getPreferences('user_info')));
+    print('name of user' + user.userName + user.id.toString());
   }
 
   @override

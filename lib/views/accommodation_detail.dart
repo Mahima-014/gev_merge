@@ -4,7 +4,6 @@ import 'package:gev_app/models/MobileAccomodationDetails.dart';
 import 'package:gev_app/utilities/size_config.dart';
 import 'package:gev_app/utilities/commons.dart';
 import 'package:gev_app/views/accommodation_map_predisplay.dart';
-import 'accommodation_map_display_checkIn.dart';
 
 class AccommodationDetail extends StatefulWidget {
   final MobileAccomodationDetails accodetails;

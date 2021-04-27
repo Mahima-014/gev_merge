@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 class MobileLocationDetails {
   int id;
   String name;

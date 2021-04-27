@@ -13,14 +13,15 @@ class EventScreen extends StatefulWidget {
 
 class _EventScreenState extends State<EventScreen> {
   EventController eventController = EventController();
-  List<EventListModel> eventList;
+  Future<List<EventListModel>> eventList;
   int selectedYear;
   String selectedMonth;
+  String selectedFilter;
 
   @override
   void initState() {
     super.initState();
-    eventList = eventController.getEventList(selectedYear, selectedMonth);
+    eventList = eventController.fetchEventList();
   }
 
   @override
@@ -31,215 +32,206 @@ class _EventScreenState extends State<EventScreen> {
       floatingActionButtonLocation:
           FloatingActionButtonLocation.miniCenterDocked,
       floatingActionButton: FloatingHomeButton(),
-      body: Container(
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(left: 30, right: 50, top: 30),
-              child: Container(
-                height: 50,
-                decoration: BoxDecoration(
-                    border: Border.all(color: Colors.black, width: 2),
-                    borderRadius: BorderRadius.all(Radius.circular(20))),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 20, vertical: 8),
-                      child: DropdownButton<int>(
-                        value: selectedYear,
-                        hint: Text(
-                          "Year",
-                          style: TextStyle(
-                              fontSize: 17,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black,
-                              height: 1.5),
-                        ),
-                        style: TextStyle(
-                            fontSize: 20, color: Colors.grey, height: 1.3),
-                        icon: Icon(
-                          Icons.arrow_drop_down_circle_rounded,
-                          color: Colors.black,
-                        ),
-                        underline: Container(
-                          height: 2,
-                        ),
-                        items: Common.getYearList().map((int value) {
-                          return new DropdownMenuItem<int>(
-                            value: value,
-                            child: Text(
-                              value.toString(),
-                              textAlign: TextAlign.left,
-                              style: TextStyle(color: Colors.grey),
-                            ),
-                          );
-                        }).toList(),
-                        onChanged: (value) {
-                          setState(() {
-                            selectedYear = value;
-                          });
-                        },
-                      ),
-                    ),
+      body: SingleChildScrollView(
+        child: Container(
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 10, right: 5, top: 30),
+                child: Container(
+                  height: 50,
+                  decoration: BoxDecoration(
+                      border: Border.all(color: Colors.black, width: 2),
+                      borderRadius: BorderRadius.all(Radius.circular(20))),
+                  child: Row(
+                    //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
 
-                    Container(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 15, vertical: 8),
-                      child: DropdownButton<String>(
-                        value: selectedMonth,
-                        hint: Text(
-                          "Month",
+                      Container(
+                        padding: EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+                        child: DropdownButton<int>(
+                          value: selectedYear,
+                          hint: Text(
+                            "Year",
+                            style: TextStyle(
+                                fontSize: 17,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
+                                height: 1.5),
+                          ),
                           style: TextStyle(
-                              fontSize: 17,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black,
-                              height: 1.5),
+                              fontSize: 20,
+                              color: Colors.grey,
+                              height: 1.3),
+                          icon: Icon(
+                            Icons.arrow_drop_down_circle_rounded,
+                            color: Colors.black,
+                          ),
+                          underline: Container(
+                            height: 2,
+                          ),
+                          items: Common.getYearList().map((int value) {
+                            return new DropdownMenuItem<int>(
+                              value: value,
+                              child: Text(
+                                value.toString(),
+                                textAlign: TextAlign.left,
+                                style: TextStyle(color: Colors.grey),
+                              ),
+                            );
+                          }).toList(),
+                          onChanged: (value) {
+                            setState(() {
+                              selectedYear = value;
+                            });
+                          },
                         ),
-                        style: TextStyle(
-                            fontSize: 20, color: Colors.grey, height: 1.3),
-                        icon: Icon(
-                          Icons.arrow_drop_down_circle_rounded,
-                          color: Colors.black,
-                        ),
-                        underline: Container(
-                          height: 2,
-                        ),
-                        items: Common.getMonthList().map((String value) {
-                          return new DropdownMenuItem<String>(
-                            value: value,
-                            child: Text(
-                              value.toString(),
-                              textAlign: TextAlign.left,
-                              style: TextStyle(color: Colors.grey),
-                            ),
-                          );
-                        }).toList(),
-                        onChanged: (value) {
-                          setState(() {
-                            selectedMonth = value;
-                          });
-                        },
                       ),
-                    ),
-                    // SizedBox.fromSize(
-                    //   size: Size(56, 56), // button width and height
-                    //   child: ClipOval(
-                    //     child: Material(
-                    //       color: Colors.white, // button color
-                    //       child: InkWell(
-                    //         onTap: () {}, // button pressed
-                    //         child: Column(
-                    //           mainAxisAlignment: MainAxisAlignment.center,
-                    //           children: <Widget>[
-                    //             Icon(Icons.search), // icon
-                    //           ],
-                    //         ),
-                    //       ),
-                    //     ),
-                    //   ),
-                    // )
-                  ],
+
+                      Container(
+                        padding: EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+                        child: DropdownButton<String>(
+                          value: selectedMonth,
+                          hint: Text(
+                            "Month",
+                            style: TextStyle(
+                                fontSize: 17,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
+                                height: 1.5),
+                          ),
+                          style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.grey,
+                              height: 1.3),
+                          icon: Icon(
+                            Icons.arrow_drop_down_circle_rounded,
+                            color: Colors.black,
+                          ),
+                          underline: Container(
+                            height: 2,
+                          ),
+                          items: Common.getMonthList().map((String value) {
+                            return new DropdownMenuItem<String>(
+                              value: value,
+                              child: Text(
+                                value.toString(),
+                                textAlign: TextAlign.left,
+                                style: TextStyle(color: Colors.grey),
+                              ),
+                            );
+                          }).toList(),
+                          onChanged: (value) {
+                            setState(() {
+                              selectedMonth = value;
+                            });
+                          },
+                        ),
+                      ),
+
+                      Container(
+                        padding: EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+                        child: DropdownButton<String>(
+                          value: selectedFilter,
+                          hint: Text(
+                            "Filter",
+                            style: TextStyle(
+                                fontSize: 17,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
+                                height: 1.5),
+                          ),
+                          style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.grey,
+                              height: 1.3),
+                          icon: Icon(
+                            Icons.arrow_drop_down_circle_rounded,
+                            color: Colors.black,
+                          ),
+                          underline: Container(
+                            height: 2,
+                          ),
+                          items: Common.getMoneyFilterList().map((String value) {
+                            return new DropdownMenuItem<String>(
+                              value: value,
+                              child: Text(
+                                value.toString(),
+                                textAlign: TextAlign.left,
+                                style: TextStyle(color: Colors.grey),
+                              ),
+                            );
+                          }).toList(),
+                          onChanged: (value) {
+                            setState(() {
+                              selectedFilter= value;
+                            });
+                          },
+                        ),
+                      ),
+                      Container(
+                        padding: EdgeInsets.symmetric(horizontal: 5, vertical: 8),
+                        child: InkWell(
+                          onTap:(){
+                              setState(() {
+                                eventList = eventController.updateEventList(selectedYear, selectedMonth, selectedFilter);
+                              });
+                          },
+                          child: Icon(
+                            Icons.search,
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
-            ),
-            SizedBox(
-              height: 50,
-            ),
-            Center(
-              child: Column(
-                children: [
-                  Card(
-                    margin: EdgeInsets.only(left: 20, right: 20),
-                    elevation: 5,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: ListView.builder(
-                        shrinkWrap: true,
-                        itemCount: eventController
-                            .getEventList(selectedYear, selectedMonth)
-                            .length,
-                        itemBuilder: (context, index) {
-                          return Padding(
-                            padding: const EdgeInsets.only(
-                                top: 10, bottom: 10, right: 10, left: 10),
-                            child: InkWell(
-                              onTap: () {
-                                showAlertBox(context, index);
-                              },
-                              child: Container(
-                                height: 55,
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                      color: Color(Constant.starColor),
-                                      borderRadius: BorderRadius.all(
-                                          Radius.circular(25))),
-                                  child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsets.only(
-                                            left: 10, top: 15, bottom: 15),
-                                        child: Column(
-                                          children: [
-                                            Text(
-                                              '${eventList[index].eventName}',
-                                              style: TextStyle(
-                                                fontSize: 18,
-                                                color: Colors.black,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.only(
-                                            right: 10, top: 15, bottom: 15),
-                                        child: Column(
-                                          children: [
-                                            Text(
-                                              '${eventList[index].date}',
-                                              style: TextStyle(
-                                                fontSize: 18,
-                                                color: Colors.black,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ),
-                          );
-                        }),
-                  ),
-                ],
+              SizedBox(
+                height: 50,
               ),
-            )
-          ],
+              Center(
+                child: FutureBuilder<List<EventListModel>>(
+                  future: eventList,
+                  builder: (context, snapshot) {
+                    if (snapshot.hasError) print(snapshot.error);
+                    return snapshot.hasData
+                        ? _createEventCards(snapshot.data)
+                        : Center(child: CircularProgressIndicator());
+                    // return the ListView widget :
+                    // Center(child: CircularProgressIndicator());
+                  },
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
   }
 
-  AlertDialog showAlertBox(BuildContext context, int index) {
+  AlertDialog showAlertBox(List<EventListModel> eventList, int index) {
     var alertBox = AlertDialog(
+      backgroundColor: Colors.deepOrange[200],
+      elevation: 3.0,
       title: Text(
-        'Name : ${eventList[index].eventName}',
+        '${eventList[index].eventName}',
       ),
       content: SingleChildScrollView(
         child: ListBody(
           children: <Widget>[
-            Text('Time: ${eventList[index].date}'),
+            Text('Date: ${eventList[index].eventDate}'),
             SizedBox(
               height: 2,
             ),
             Text('Description: ${eventList[index].description}'),
+            SizedBox(
+              height: 2,
+            ),
+            Text('From: ${eventList[index].startTime}'),
+            SizedBox(
+              height: 2,
+            ),
+            Text('To: ${eventList[index].endTime}'),
           ],
         ),
       ),
@@ -249,5 +241,82 @@ class _EventScreenState extends State<EventScreen> {
         builder: (buildContext) {
           return alertBox;
         });
+  }
+
+  Widget _createEventCards(List<EventListModel> eventList) {
+    return Container(
+      child: Center(
+        child: Column(
+          children: [
+            Card(
+              margin: EdgeInsets.only(left: 20, right: 20),
+              elevation: 5,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: ListView.builder(
+                  shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
+                  itemCount: eventList.length,
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: const EdgeInsets.only(
+                          top: 10, bottom: 10, right: 10, left: 10),
+                      child: InkWell(
+                        onTap: () {
+                          showAlertBox(eventList, index);
+                        },
+                        child: Container(
+                          height: 55,
+                          child: Container(
+                            decoration: BoxDecoration(
+                                color: Color(Constant.starColor),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(25))),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      left: 10, top: 15, bottom: 15),
+                                  child: Column(
+                                    children: [
+                                      Text(
+                                        '${eventList[index].eventName}',
+                                        style: TextStyle(
+                                          fontSize: 12,
+                                          color: Colors.black,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      right: 10, top: 15, bottom: 15),
+                                  child: Column(
+                                    children: [
+                                      Text(
+                                        '${eventList[index].eventDate}',
+                                        style: TextStyle(
+                                          fontSize: 15,
+                                          color: Colors.black,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    );
+                  }),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

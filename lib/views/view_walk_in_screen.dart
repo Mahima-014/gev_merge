@@ -13,6 +13,9 @@ class ViewWalkInScreen extends StatefulWidget {
 }
 
 class _ViewWalkInScreenState extends State<ViewWalkInScreen> {
+  int noOfVisitors = 6;
+
+  var timeRemaining = '00:15';
   Future<List<Map>> list;
   String imageUrl;
   ViewWalkInController viewWalkInController = ViewWalkInController();

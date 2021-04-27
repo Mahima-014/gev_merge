@@ -1,15 +1,17 @@
-class Constant{
+class Constant {
   static const int appBarBackgroundColor = 0xffffffff;
   static const int appBarTextColor = 0xff000000;
-  static const int buttonColor=0xffa55705;
-  static const int starColor=0xffffd660;
+  static const int buttonColor = 0xffa55705;
+  static const int starColor = 0xffffd660;
 
   //Db Structure table name
-  static String mobile_user_feedback = 'mobile_user_feedback';
-  static String mobile_user_details = 'mobile_user_details';
+
+  static String mobileUserFeedback = 'mobile_user_feedback';
+  static String mobileUserDetails = 'mobile_user_details';
 
   //db queries
-  static String queryToCreateMobileUserFeedbackTable = 'CREATE TABLE mobile_user_feedback('
+  static String queryToCreateMobileUserFeedbackTable =
+      'CREATE TABLE mobile_user_feedback('
       'id int,'
       'user_id	int,'
       'mobile_user_details_id	int,'
@@ -23,7 +25,8 @@ class Constant{
       'overall_comments	varchar,'
       'is_selected_for_display	boolean)';
 
-  static String queryToCreateMobileUserDetailsTable = 'CREATE TABLE mobile_user_details('
+  static String queryToCreateMobileUserDetailsTable =
+      'CREATE TABLE mobile_user_details('
       'id	INTEGER PRIMARY KEY,'
       'user_id	int,'
       'visit_type	varchar,'
@@ -41,11 +44,6 @@ class Constant{
       'Slot_time_end	varchar'
       ')';
 
-  static String queryToGetAllRecordsOfMobileUserDetailsTable = "SELECT * FROM mobile_user_details";
-
-
-
-  //API SUB-URL
-  static String SUB_URL_add_user_feedback = "add-user-feedback";
-
+  static String queryToGetAllRecordsOfMobileUserDetailsTable =
+      "SELECT * FROM mobile_user_details";
 }

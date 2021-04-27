@@ -7,9 +7,8 @@ import 'package:gev_app/utilities/home_section3.dart';
 import 'package:gev_app/utilities/home_section4.dart';
 import 'package:gev_app/utilities/home_section7.dart';
 import 'package:gev_app/controllers/login_controller.dart';
-import 'package:gev_app/views/login.dart';
 
-// Home screen.
+// Home screen .
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -28,12 +27,14 @@ class _HomeState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    MediaQueryData queryData;
+    queryData = MediaQuery.of(context);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: SafeArea(
         child: Scaffold(
           body: Container(
-            height: 800,
+            height: queryData.size.height,
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage("assets/images/background_image.jpg"),

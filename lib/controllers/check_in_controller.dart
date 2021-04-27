@@ -21,6 +21,10 @@ class CheckInController {
     print(preferences.getPreferences("phoneNo"));
     print(mobileUserDetails.checkInDate);
     print(mobileUserDetails.checkOutDate);
+    User user =
+        User.fromJson(jsonDecode(preferences.getPreferences('user_info')));
+    print('name of user' + user.userName);
+
     var queryparams = {
       'user_id': preferences.getPreferences("id"),
       'mobile': phone,
@@ -35,6 +39,7 @@ class CheckInController {
     checkinDetail = MobileUserDetails.fromJson(response["check_in_info"]);
     print('checkinDetail controller: ' + checkinDetail.visitType.toString());
     print('check fetch : ' + checkinDetail.checkInCode.toString());
+    preferences.setPreferences('mobile_user_id', checkinDetail.id.toString());
     preferences.setPreferences(
         'check_in_code', checkinDetail.checkInCode.toString());
     preferences.setPreferences(

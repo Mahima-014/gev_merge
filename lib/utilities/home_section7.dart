@@ -11,12 +11,12 @@ class HomeSection7 extends StatefulWidget {
 
 class _HomeSection7State extends State<HomeSection7> {
   FeedbackController feedbackController = FeedbackController();
-  List<FeedbackListModel> feedbackList;
+  Future<List<FeedbackListModel>> feedbackList;
   @override
   void initState() {
     super.initState();
     setState(() {
-      feedbackList = feedbackController.getFeedbackList();
+      feedbackList = feedbackController.fetchFeedbackList();
     });
   }
 
@@ -46,19 +46,30 @@ class _HomeSection7State extends State<HomeSection7> {
           ),
         ),
         Container(
+          child: FutureBuilder<List<FeedbackListModel>>(
+            future: feedbackList,
+            builder: (context, snapshot) {
+              if (snapshot.hasError) print(snapshot.error);
+              return snapshot.hasData
+                  ? widgetSlider(snapshot.data)
+                  : Center(child: CircularProgressIndicator());
+              // return the ListView widget :
+              // Center(child: CircularProgressIndicator());
+            },
+          ),
           height: 300,
-          child: widgetSlider(context),
+          // child: widgetSlider(context),
         ),
       ],
     );
   }
 
-  Swiper widgetSlider(context) {
+  Swiper widgetSlider(List<FeedbackListModel> feedbackList) {
     return new Swiper(
       autoplay: true,
       viewportFraction: 0.8,
       scale: 1,
-      itemCount: feedbackController.getFeedbackList().length,
+      itemCount: feedbackList.length,
       itemBuilder: (context, index) {
         return Padding(
           padding:
@@ -84,7 +95,7 @@ class _HomeSection7State extends State<HomeSection7> {
                           style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
-                            fontSize: 20,
+                            fontSize: 15,
                           ),
                         ),
                         SmoothStarRating(
@@ -92,7 +103,7 @@ class _HomeSection7State extends State<HomeSection7> {
                           onRated: (v) {},
                           starCount: 5,
                           rating: feedbackList[index].rating,
-                          size: 30.0,
+                          size: 20.0,
                           isReadOnly: true,
                           // fullRatedIconData: Icons.blur_off,
                           // halfRatedIconData: Icons.blur_on,
@@ -109,7 +120,7 @@ class _HomeSection7State extends State<HomeSection7> {
                         style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
-                          fontSize: 16,
+                          fontSize: 10,
                         ),
                       ),
                     ),
@@ -123,5 +134,3 @@ class _HomeSection7State extends State<HomeSection7> {
     );
   }
 }
-
-class $ {}

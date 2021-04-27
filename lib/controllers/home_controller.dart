@@ -60,7 +60,7 @@ class HomeController {
             TimeOfDay(hour: 1, minute: 0))))) {
       print(
           'Inside: if (Delete record if the time is between 4:05 PM to 12:00 AM) ');
-      dbManager.delete(Constant.mobile_user_details, 'id = ?', [1]);
+      dbManager.delete(Constant.mobileUserDetails, 'id = ?', [1]);
     } else {
       print(
           'Inside: else (Delete record if the time is between 4:05 PM to 12:00 AM) ');

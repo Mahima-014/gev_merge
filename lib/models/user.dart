@@ -1,4 +1,5 @@
 class User {
+  int id;
   String userName;
   int userPhoneCountryCode;
   int userPhone;
@@ -14,6 +15,7 @@ class User {
 
   User(
       {this.userName,
+      this.id,
       this.userPhoneCountryCode,
       this.userPhone,
       this.userEmail,
@@ -27,6 +29,7 @@ class User {
 
   User.fromJson(Map<String, dynamic> json)
       : userName = json['name'],
+        id = json['id'],
         userPhoneCountryCode = json['country_code'],
         userPhone = json['phone'],
         // password = json['password'],
@@ -40,6 +43,7 @@ class User {
         lastModifiedBy = json['last_modified_by'];
 
   Map<String, dynamic> toJson() => {
+        'id': id,
         'name': userName,
         'country_code': userPhoneCountryCode,
         'phone': userPhone,

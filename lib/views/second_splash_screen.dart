@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:async';
-import 'package:gev_app/controllers/register_controller.dart';
 
 class SecondSplashScreen extends StatefulWidget {
   @override
@@ -21,8 +20,8 @@ class _SecondSplashScreenState extends State<SecondSplashScreen> {
   }
 
   startTime() {
-    var duration = new Duration(seconds: 4);
-    return new Timer(duration, _loadUserInfo());
+    var duration = new Duration(seconds: 5);
+    return new Timer(duration, _loadUserInfo);
   }
 
   _loadUserInfo() {

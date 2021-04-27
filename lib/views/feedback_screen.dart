@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:gev_app/controllers/feedback_controller.dart';
-import 'package:gev_app/models/feedback.dart';
 import 'package:gev_app/models/feedback_list_model.dart';
 import 'package:gev_app/utilities/constants.dart';
 import 'package:gev_app/views/support_a_cause_screen.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
 import 'package:gev_app/utilities/commons.dart';
-
+import 'package:gev_app/controllers/feedback_controller.dart';
 
 // Screen to get the feedback of user.
 class FeedbackScreen extends StatefulWidget {
@@ -15,37 +13,24 @@ class FeedbackScreen extends StatefulWidget {
 }
 
 class _FeedbackScreenState extends State<FeedbackScreen> {
-
   FeedbackController feedbackController;
   List<FeedbackListModel> viewDetailsList;
 
-  //TextEditingControllers
-  TextEditingController overall_experience_comment_con = TextEditingController();
-  TextEditingController reservation_experience_comment_con = TextEditingController();
-  TextEditingController staff_experience_comment_con = TextEditingController();
-  TextEditingController events_organization_comment_con = TextEditingController();
-  TextEditingController value_for_money_comment_con = TextEditingController();
-  TextEditingController general_comments_con = TextEditingController();
-
-  //Model Object
-  FeedbackModel feedbackModel = FeedbackModel();
-
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     feedbackController = FeedbackController();
     viewDetailsList = feedbackController.getViewDetailsList();
   }
 
-  var rating=3.0;
+  var rating = 3.0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: Common.appBar('Feedback'),
       bottomNavigationBar: BottomNavbar(),
       floatingActionButtonLocation:
-      FloatingActionButtonLocation.miniCenterDocked,
+          FloatingActionButtonLocation.miniCenterDocked,
       floatingActionButton: FloatingHomeButton(),
       body: SingleChildScrollView(
         child: Center(
@@ -62,7 +47,6 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                   fit: BoxFit.fill,
                 ),
               ),
-
               ListView.builder(
                 physics: NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
@@ -70,58 +54,8 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                 itemBuilder: (context, index) {
                   return Column(
 
-                    //mainAxisAlignment: MainAxisAlignment.center,
+                      //mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Card(
-                            margin: EdgeInsets.only(left: 20, right: 20),
-                            elevation: 5,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(15),
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsets.only(
-                                  top: 15, bottom: 15, left: 20, right: 20),
-                              child: Row(
-                                mainAxisAlignment:
-                                MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Column(
-                                    children: [Text(viewDetailsList[index].text)],
-                                  ),
-                                  Column(
-                                    children: [
-                                      SmoothStarRating(
-                                          allowHalfRating: true,
-                                          onRated: (v) {
-                                            if(viewDetailsList[index].text == "Overall Experience")
-                                              feedbackModel.overallExperience = v;
-                                            else if(viewDetailsList[index].text == "Reservation Experience")
-                                              feedbackModel.reservationExperience = v;
-                                            else if(viewDetailsList[index].text == "Staff Experience")
-                                              feedbackModel.staffEfficiency = v;
-                                            else if(viewDetailsList[index].text == "Events Organization")
-                                              feedbackModel.eventsOrganisation = v;
-                                            else if(viewDetailsList[index].text == "Value For Money")
-                                              feedbackModel.valueOfExperience = v;
-                                          },
-                                          starCount: 5,
-                                          rating: viewDetailsList[index].rating,
-                                          size: 20.0,
-                                          isReadOnly: false,
-                                          // fullRatedIconData: Icons.blur_off,
-                                          // halfRatedIconData: Icons.blur_on,
-                                          color: Color(Constant.starColor),
-                                          borderColor:
-                                          Color(Constant.starColor),
-                                          spacing: 0.0)
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            )),
                         SizedBox(
                           height: 10,
                         ),
@@ -131,53 +65,41 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(15),
                           ),
-                          child: Column(
-                            children: [
-                              TextFormField(
-                                decoration: Common.buildInputDecorationComment(
-                                    'Your Comment (Optional)'),
-
-                                controller: index == 0 ? overall_experience_comment_con :
-                                index == 1 ? reservation_experience_comment_con :
-                                index == 2 ? staff_experience_comment_con :
-                                index == 3 ? events_organization_comment_con :
-                                value_for_money_comment_con,
-
-                                maxLines: null,
-                              )
-                            ],
+                          child: Padding(
+                            padding: const EdgeInsets.only(
+                                top: 15, bottom: 15, left: 20, right: 20),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Column(
+                                  children: [Text(viewDetailsList[index].text)],
+                                ),
+                                Column(
+                                  children: [
+                                    SmoothStarRating(
+                                        allowHalfRating: true,
+                                        onRated: (v) {},
+                                        starCount: 5,
+                                        rating: viewDetailsList[index].rating,
+                                        size: 20.0,
+                                        isReadOnly: false,
+                                        // fullRatedIconData: Icons.blur_off,
+                                        // halfRatedIconData: Icons.blur_on,
+                                        color: Color(Constant.starColor),
+                                        borderColor: Color(Constant.starColor),
+                                        spacing: 0.0)
+                                  ],
+                                ),
+                              ],
+                            ),
                           ),
                         ),
-
                         SizedBox(
                           height: 10,
                         ),
                       ]);
                 },
               ),
-
-
-              SizedBox(
-                height: 10,
-              ),
-              Card(
-                margin: EdgeInsets.only(left: 20, right: 20),
-                elevation: 5,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                child: Column(
-                  children: [
-                    TextFormField(
-                      decoration: Common.buildInputDecorationComment(
-                          'General Comments (Optional)'),
-                      controller: general_comments_con,
-                      maxLines: null,
-                    )
-                  ],
-                ),
-              ),
-
               SizedBox(
                 height: 20,
               ),
@@ -191,19 +113,10 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                         ButtonTheme(
                           minWidth: 120,
                           height: 42,
-                          child: RaisedButton(
+                          child: ElevatedButton(
                             onPressed: () {
-                              feedbackModel.overallComments = overall_experience_comment_con.text;
-                              feedbackModel.reservationComments = reservation_experience_comment_con.text;
-                              feedbackModel.staffComments = staff_experience_comment_con.text;
-                              feedbackModel.eventsComments = events_organization_comment_con.text;
-                              feedbackModel.valueComments = value_for_money_comment_con.text;
-                              feedbackModel.generalComments = general_comments_con.text;
-                              print("FEEDBACK SCREEN: ${feedbackModel.toString()}");
-                              feedbackController.sendDataToServer(feedbackModel);
                               print('Done');
-
-                              },
+                            },
                             child: Text(
                               'Submit',
                               style: TextStyle(
@@ -211,13 +124,15 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                                 fontSize: 18,
                               ),
                             ),
-                            color: Color(Constant.buttonColor),
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.all(
-                                  const Radius.circular(8.0),
-                                ),
-                                side: BorderSide(
-                                    color: Color(Constant.buttonColor))),
+                            style: ElevatedButton.styleFrom(
+                              primary: Color(Constant.buttonColor),
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.all(
+                                    const Radius.circular(8.0),
+                                  ),
+                                  side: BorderSide(
+                                      color: Color(Constant.buttonColor))),
+                            ),
                           ),
                         ),
                       ],
@@ -230,7 +145,7 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                         ButtonTheme(
                           minWidth: 120,
                           height: 42,
-                          child: RaisedButton(
+                          child: ElevatedButton(
                             onPressed: () {
                               Navigator.push(
                                 context,
@@ -245,13 +160,15 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                                 fontSize: 18,
                               ),
                             ),
-                            color: Color(Constant.buttonColor),
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.all(
-                                  const Radius.circular(8.0),
-                                ),
-                                side: BorderSide(
-                                    color: Color(Constant.buttonColor))),
+                            style: ElevatedButton.styleFrom(
+                              primary: Color(Constant.buttonColor),
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.all(
+                                    const Radius.circular(8.0),
+                                  ),
+                                  side: BorderSide(
+                                      color: Color(Constant.buttonColor))),
+                            ),
                           ),
                         ),
                       ],

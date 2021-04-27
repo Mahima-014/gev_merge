@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:gev_app/models/user.dart';
 import 'package:gev_app/utilities/webservice_manager.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -11,20 +13,17 @@ class LogInController {
     Map<dynamic, dynamic> response = await wsm.makeGetRequest(
         'fetch-user-info/?phone=${user.userPhone}&password=${user.password}');
     print("Response" + response.toString());
-    // print(response.user_id);
     SharedPreferences prefs = await SharedPreferences.getInstance();
 
-    // print("ans is ${jsonResponse.user_info.id}");
-    // print("${user.userEmail}");
     if (response["user_info"] != null) {
       user = User.fromJson(response["user_info"][0]);
-      // print('response id' + response["user_info"][0]["id"].toString());
+      prefs.setString('user_info', jsonEncode(user));
       prefs.setString('id', response["user_info"][0]["id"].toString());
       prefs.setString('username', user.userName.toString());
       prefs.setString('phoneNo', user.userPhone.toString());
-      // print("Number exists");
       prefs.setString('isLoggedIn', "true");
       // print("You are logged in. DETAILS : phoneNo : ${user.userPhone}");
+      print(jsonDecode(prefs.getString('user_info')));
     }
 
     print(prefs.getString('phoneNo'));

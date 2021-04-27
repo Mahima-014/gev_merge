@@ -163,8 +163,9 @@ class _MyAppState extends State<Register> {
         Padding(
           padding: const EdgeInsets.all(10.0),
           child: new TextFormField(
+            obscureText: true,
             decoration: buildInputDecoration(Icons.lock, 'Password'),
-            keyboardType: TextInputType.text,
+            keyboardType: TextInputType.visiblePassword,
             // validator: validatePhoneNo,
             onSaved: (String val) {
               password = val;
@@ -206,24 +207,26 @@ class _MyAppState extends State<Register> {
     if (_formKey.currentState.validate()) {
 //    If all data are correct then save data to out variables
       _formKey.currentState.save();
-      setState(() {
-        registerController.register(new User(
-            userEmail: email,
-            userName: name,
-            userPhoneCountryCode: int.parse(countryCode),
-            userAddress: 'test',
-            userDob: '2021-03-18',
-            password: password,
-            userPhone: int.parse(phoneNo)));
-      });
-      SharedPreferences prefs = await SharedPreferences.getInstance();
-      var now = DateTime.now();
-      prefs.setString('prev_date', now.toString());
-      prefs.setString('isValidWalkin', 'true');
-      UserType().setwalkInPref();
 
-      Navigator.pushNamedAndRemoveUntil(
-          context, '/home', ModalRoute.withName('/home'));
+      await registerController.register(new User(
+          userEmail: email,
+          userName: name,
+          userPhoneCountryCode: int.parse(countryCode),
+          userAddress: 'test',
+          userDob: '2021-03-18',
+          password: password,
+          userPhone: int.parse(phoneNo)));
+
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      // var now = DateTime.now();
+      // prefs.setString('prev_date', now.toString());
+      print('is valid walkin' + prefs.getString('isValidWalkin'));
+      prefs.getString('isValidWalkin');
+      UserType().setwalkInPref();
+      if (prefs.getString('isValidWalkin') == "true") {
+        Navigator.pushNamedAndRemoveUntil(
+            context, '/home', ModalRoute.withName('/home'));
+      }
     } else {
 //    If all data are not valid then start auto validation.
       setState(() {

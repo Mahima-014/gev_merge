@@ -157,11 +157,21 @@ class Common {
   }
 
   static List<int> getYearList() {
-    List<int> yearList = [];
-    for (int i = DateTime.now().year; i >= 2010; i--) yearList.add(i);
+    List<int> yearList = [
+      DateTime.now().year-1,
+      DateTime.now().year,
+      DateTime.now().year+1
+    ];
 
     return yearList;
   }
+
+  static List<String> getMoneyFilterList()
+  {
+    List<String> moneyFilterList = ["Paid","Unpaid"];
+    return moneyFilterList;
+  }
+
 
   static List<String> getMonthList() {
     List<String> monthList = [
